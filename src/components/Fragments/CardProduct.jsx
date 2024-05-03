@@ -26,23 +26,22 @@ const Body = (props) => {
     <div className="px-5 h-[10rem]">
       <a href="#">
         <h5 className="text-xl font-semibold tracking-tight text-gray-900">
-          {title}
+          {title.substring(0, 20)}
         </h5>
       </a>
       <div className="flex items-center mt-2.5 mb-5">
-        <p>{children}</p>
+        <p>{children.substring(0, 100)}....</p>
       </div>
     </div>
   );
 };
 
-const Footer = () => {
+const Footer = (props) => {
+  const { price } = props;
   return (
     <div className="px-5 pb-5">
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 ">
-          $ 100
-        </span>
+        <span className="text-3xl font-bold text-gray-900 ">${price} </span>
         <a
           href="#"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
