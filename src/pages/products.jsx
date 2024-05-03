@@ -4,7 +4,7 @@ import Button from "../components/Elements/Button";
 import CardProduct from "../components/Fragments/CardProduct";
 import { useEffect } from "react";
 import { getProducts } from "../service/product.services";
-import { getUsername } from "../service/auth.service";
+import { getUserName } from "../service/auth.service";
 
 // const products = [
 //   {
@@ -43,7 +43,7 @@ const ProductPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setUser(getUsername(token));
+      setUser(getUserName(token));
     } else {
       window.location.href = "/";
     }
